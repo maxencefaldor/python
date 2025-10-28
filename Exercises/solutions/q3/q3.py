@@ -17,6 +17,5 @@ def filter_e_v2(string):
 # Alternative solution
 def filter_e_v3(string):
     words = string.split()
-    new_string = filter(lambda w:'e' not in w, words)
+    new_string = filter(lambda w: "e" not in w, words)
     return " ".join(new_string)
-

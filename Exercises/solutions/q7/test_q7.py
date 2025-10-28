@@ -41,8 +41,8 @@ def test_same_start_and_end_is_not_palindrome():
     count = count_palindromes(75, 75)
     print(count)
     assert count == 0
-    
-    
+
+
 if __name__ == "__main__":
     test_one_to_ten()
     test_one_to_hundred()
@@ -51,4 +51,3 @@ if __name__ == "__main__":
     test_arbitrary()
     test_same_start_and_end_is_palindrome()
     test_same_start_and_end_is_not_palindrome()
-    

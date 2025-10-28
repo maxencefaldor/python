@@ -41,4 +41,3 @@ if __name__ == "__main__":
     test_o_wins()
     test_draw()
     test_incomplete()
-

@@ -2,14 +2,16 @@ from q15 import is_sudoku_board_valid
 
 # the following board configurations are provided for testing purposes
 # see boards.py if you want to look at them
-from boards import (valid_board1,
-                    valid_board2,
-                    valid_board3,
-                    valid_incomplete_board,
-                    invalid_row_board, 
-                    invalid_column_board,
-                    invalid_box_board,
-                    invalid_character_board)
+from boards import (
+    valid_board1,
+    valid_board2,
+    valid_board3,
+    valid_incomplete_board,
+    invalid_row_board,
+    invalid_column_board,
+    invalid_box_board,
+    invalid_character_board,
+)
 
 # print_board() prints out a visually appealing board
 from boards import print_board
@@ -48,7 +50,7 @@ def test_invalid_characters():
     result = is_sudoku_board_valid(invalid_character_board)
     print(result)
     assert result == False
-    
+
 
 def test_invalid_rows():
     print_board(invalid_row_board)

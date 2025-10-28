@@ -25,4 +25,3 @@ class Monster:
 if __name__ == "__main__":
     monster = Monster()
     monster.attack()
-    

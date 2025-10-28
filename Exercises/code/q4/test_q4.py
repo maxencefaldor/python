@@ -25,7 +25,7 @@ def test():
     answer = count_repeats("dingdong")
     print(answer)
     assert answer == 0
-    
-    
+
+
 if __name__ == "__main__":
     test()

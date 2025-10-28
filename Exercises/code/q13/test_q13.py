@@ -1,5 +1,6 @@
 from q13 import Store, Product, NoOffer, PercentageReductionOffer, BuyNGet1FreeOffer
 
+
 def test_init_from_json():
     json_filename = "products.json"
     store = Store()
@@ -15,7 +16,7 @@ def test_init_from_json():
         "5000": Product("5000", "plum", 0.60, NoOffer()),
         "5400": Product("5400", "nectarine", 0.70, PercentageReductionOffer(0.10)),
         "6000": Product("6000", "kiwi", 1.00, NoOffer()),
-        "3800": Product("3800", "papaya", 2.00, BuyNGet1FreeOffer(1))
+        "3800": Product("3800", "papaya", 2.00, BuyNGet1FreeOffer(1)),
     }
 
     assert store.products == expected_values
@@ -43,18 +44,18 @@ def test_percent_offer():
     total = offer.calculate_total(1.2, 15)
     print(total)
     assert is_close(total, 4.5)
-    
+
     offer = PercentageReductionOffer(0.90)
     total = offer.calculate_total(1.2, 15)
     print(total)
     assert is_close(total, 1.8)
 
-    offer = PercentageReductionOffer(0.)
+    offer = PercentageReductionOffer(0.0)
     total = offer.calculate_total(1.2, 15)
     print(total)
     assert is_close(total, 18)
-    
-    offer = PercentageReductionOffer(1.)
+
+    offer = PercentageReductionOffer(1.0)
     total = offer.calculate_total(1.2, 15)
     print(total)
     assert is_close(total, 0)
@@ -78,7 +79,7 @@ def test_buy_n_get_1_free_offer():
     total = offer.calculate_total(1.0, 3)
     print(total)
     assert is_close(total, 2.0)
-    
+
     n = 2
     offer = BuyNGet1FreeOffer(n)
     total = offer.calculate_total(0.5, 4)
@@ -106,10 +107,10 @@ def test_buy_n_get_1_free_offer():
 
 def is_close(x, y):
     eps = 0.0000001
-    return abs(y - x) < eps    
+    return abs(y - x) < eps
 
 
 if __name__ == "__main__":
     test_init_from_json()
     test_percent_offer()
-    test_buy_n_get_1_free_offer() 
+    test_buy_n_get_1_free_offer()

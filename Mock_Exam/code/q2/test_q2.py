@@ -9,7 +9,7 @@ def test_2d():
     assert closest == expected
 
 
-def test_3d():   
+def test_3d():
     coord_list = [(1, 1, 1), (2, 3, 1), (3, 3, 2), (1, 3, 3), (4, 1, 1), (3, 4, 4)]
     closest = closest_pair(coord_list)
     expected = {(2, 3, 1), (3, 3, 2)}
@@ -20,4 +20,3 @@ def test_3d():
 if __name__ == "__main__":
     test_2d()
     test_3d()
-

@@ -4,6 +4,7 @@ from io import StringIO
 from monster import Monster
 from q9 import Python
 
+
 def test_move():
     python = Python()
     output = python.move()
@@ -42,7 +43,7 @@ kicking
 hiss
 sleeping"""
 
-    assert expected_output.strip() == output.getvalue().strip() 
+    assert expected_output.strip() == output.getvalue().strip()
 
 
 if __name__ == "__main__":
@@ -50,4 +51,3 @@ if __name__ == "__main__":
     test_roar()
     test_is_monster()
     test_attack()
-

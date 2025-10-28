@@ -2,8 +2,9 @@ from q12 import CashAccount
 
 from bank_account import BankAccount
 
+
 def example_bank_account_usage():
-    """ This is just an example of how you can use the provided BankAccount class """
+    """This is just an example of how you can use the provided BankAccount class"""
     print("BankAccount example usage")
     initial_balance = 1000.0
     account = BankAccount(initial_balance)
@@ -17,9 +18,11 @@ def example_bank_account_usage():
 
 def test_simulation():
     initial_balance = 1000.0
-    print(f"Creating a new cash account in October with an initial balance of £{initial_balance}.")
+    print(
+        f"Creating a new cash account in October with an initial balance of £{initial_balance}."
+    )
     account = CashAccount(initial_balance)
-    
+
     print("User makes 10 deposits of £10 each in October...")
     for i in range(10):
         account.deposit(10.0)
@@ -31,7 +34,7 @@ def test_simulation():
         account.withdraw(100.0)
     print(f"Balance after the 10 withdrawals: £{account.balance}")
     assert account.balance == 100.0
-    
+
     print("The bank deducts its service fee at the end of October")
     account.deduct_monthly_fees()
     print(f"Balance after deduction: £{account.balance}")
@@ -48,12 +51,11 @@ def test_simulation():
     assert account.balance == 54.0
 
     print("The bank deducts its service fee at the end of November")
-    account.deduct_monthly_fees() # should not deduct any fee,
+    account.deduct_monthly_fees()  # should not deduct any fee,
     print(f"Balance after deduction: £{account.balance}")
     assert account.balance == 54.0
 
 
 if __name__ == "__main__":
-    #example_bank_account_usage()
+    # example_bank_account_usage()
     test_simulation()
-

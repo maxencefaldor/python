@@ -10,11 +10,13 @@ class Store:
     def checkout(self, shopping_cart):
         print("============================")
         total = 0
-        for (product_id, quantity) in shopping_cart.items.items():
+        for product_id, quantity in shopping_cart.items.items():
             product = self.products[product_id]
             cost = product.calculate_price(quantity)
             total += cost
-            print(f"{product.name}\t£{product.price}\t{quantity}\t£{cost}\t{product.offer}")
+            print(
+                f"{product.name}\t£{product.price}\t{quantity}\t£{cost}\t{product.offer}"
+            )
         print("============================")
         print(f"TOTAL:\t\t\t£{total}")
         print("============================")
@@ -34,10 +36,11 @@ class Product:
         return f"<{self.id}: {self.name} (£{self.price}) {self.offer}>"
 
     def __eq__(self, other):
-        return (self.id == other.id and 
-                self.name == other.name and 
-                self.price == other.price and 
-                self.offer == other.offer
+        return (
+            self.id == other.id
+            and self.name == other.name
+            and self.price == other.price
+            and self.offer == other.offer
         )
 
     def calculate_price(self, quantity):
@@ -49,26 +52,28 @@ class NoOffer:
         pass
 
     def __repr__(self):
-        return f"(No offer)"
+        return "(No offer)"
 
     def __eq__(self, other):
         return isinstance(other, NoOffer)
-    
+
     def calculate_total(self, cost_per_item, quantity=1):
         return cost_per_item * quantity
 
 
 class PercentageReductionOffer:
-    def __init__(self, percent_discount=0.):
+    def __init__(self, percent_discount=0.0):
         self.percent_discount = percent_discount
 
     def __repr__(self):
-        return f"({self.percent_discount*100}% off)"
-        
+        return f"({self.percent_discount * 100}% off)"
+
     def __eq__(self, other):
-        return (isinstance(other, PercentageReductionOffer) and 
-                self.percent_discount == other.percent_discount)
-    
+        return (
+            isinstance(other, PercentageReductionOffer)
+            and self.percent_discount == other.percent_discount
+        )
+
     def calculate_total(self, cost_per_item, quantity=1):
         # TODO: Complete
         pass
@@ -80,12 +85,10 @@ class BuyNGet1FreeOffer:
 
     def __repr__(self):
         return f"(Buy {self.n} Get 1 Free Offer)"
-        
+
     def __eq__(self, other):
-        return (isinstance(other, BuyNGet1FreeOffer) and 
-                self.n == other.n)
-    
+        return isinstance(other, BuyNGet1FreeOffer) and self.n == other.n
+
     def calculate_total(self, cost_per_item, quantity=1):
         # TODO: Complete
         pass
-

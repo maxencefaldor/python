@@ -1,13 +1,14 @@
 from q3 import filter_e
 
+
 def test_simple():
     output = filter_e("I swear by the moon and the stars in the sky")
     print(output)
 
     expected_output = "I by moon and stars in sky"
 
-    assert output == expected_output 
-    
+    assert output == expected_output
+
 
 def test_one_word_left():
     output = filter_e("She sells sea shells by the sea shore")
@@ -15,7 +16,7 @@ def test_one_word_left():
 
     expected_output = "by"
 
-    assert output == expected_output 
+    assert output == expected_output
 
 
 def test_numbers():
@@ -24,7 +25,7 @@ def test_numbers():
 
     expected_output = "1 22 333 4444 55555"
 
-    assert output == expected_output 
+    assert output == expected_output
 
 
 def test_empty_string():
@@ -33,7 +34,7 @@ def test_empty_string():
 
     expected_output = ""
 
-    assert output == expected_output 
+    assert output == expected_output
 
 
 if __name__ == "__main__":
@@ -41,4 +42,3 @@ if __name__ == "__main__":
     test_one_word_left()
     test_numbers()
     test_empty_string()
-

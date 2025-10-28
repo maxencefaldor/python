@@ -11,5 +11,3 @@ class BankAccount:
 
     def withdraw(self, amount):
         self.__balance -= amount
-
-

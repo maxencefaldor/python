@@ -20,4 +20,3 @@ def test_even():
 if __name__ == "__main__":
     test_odd()
     test_even()
-
